@@ -1,0 +1,15 @@
+tweepy 
+pandas 
+numpy 
+scikit-learn
+nltk
+flask
+matplotlib
+seaborn
+transformers 
+torch
+chardet
+joblib
+beautifulsoup4
+requests
+regex

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MHS - Cyber Abuse Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1>MHS Cyber Abuse Detection</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <form id="predictForm">
+        <textarea name="text" placeholder="Enter text to classify..." required></textarea>
+
+        <select name="model" required>
+          <option value="nb">Naive Bayes</option>
+          <option value="rf">Random Forest</option>
+          <option value="svm">Support Vector Machine</option>
+        </select>
+
+        <button type="submit">Predict</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MHS Cyber Abuse Detection | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById("predictForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+
+      const res = await fetch("/predict", {
+        method: "POST",
+        body: formData
+      });
+      const data = await res.json();
+      document.getElementById("result").innerHTML =
+        `<p>Prediction: <strong>${data.prediction}</strong></p>`;
+    });
+  </script>
+</body>
+
+</html>
