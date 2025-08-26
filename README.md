@@ -15,6 +15,7 @@ This project detects cyber abuse in Roman Urdu text using machine learning and d
 ---
 
 ## Project Structure
+```
 Cyber Abuse Detection Using ML In Roman Urdu/
 ├── data/
 │   └── cyber_abuse_data_roman_urdu.csv
@@ -45,6 +46,7 @@ Cyber Abuse Detection Using ML In Roman Urdu/
 ├── .gitignore
 ├── README.md
 └── requirements.txt
+```
 ---
 
 ## Usage
